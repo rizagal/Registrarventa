@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Articulos</ion-title>
+    <ion-buttons slot="end">
+      {{ user.email }}
+      <ion-button fill="clear"  (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-list>
+     <ion-card *ngFor="let articulo of articulos" [routerLink]="['/detallearticulo/',articulo.id_articulo]">
+        <ion-card-content>
+           <p>{{articulo.producto}}</p>
+           <ion-img [src]="articulo.url_imagen_producto" style="height: 320px;"></ion-img>
+           <p>{{articulo.marca}}</p>
+        </ion-card-content>         
+     </ion-card>
+ </ion-list>
+
+ <ion-card>
+  <ion-card-content>
+ <ion-input type="text" placeholder="Escribe el Articulo Consultar" #num_arti>
+</ion-input>
+ <ion-button color="primary" (click)="getArticulo(num_arti)">
+  Leer
+ </ion-button>
+</ion-card-content>         
+</ion-card>
+
+
+ <ion-card>
+  <ion-card-content>   
+<!--  coloco simbolo ? para que funcione--> 
+     <p>{{articulo?.marca}}</p>    
+  </ion-card-content>         
+</ion-card>
+
+<ion-button color="primary" (click)="creararticulo(num_arti)">
+  Crear Articulo
+ </ion-button>
+
+</ion-content>

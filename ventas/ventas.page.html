@@ -1,0 +1,258 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>  
+    <ion-avatar slot="end">   
+      <ion-img style="width: 100%; height: 100%" src="./assets/unido1.png"></ion-img>   
+    </ion-avatar>
+    <ion-label>
+      <h3>Restaurant Menu</h3>
+      <p>Vender</p>
+    </ion-label>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<div class="ion-padding wrapper">
+
+  <ion-searchbar placeholder="Buscar"></ion-searchbar>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-align-items-baseline">
+      <ion-col size="6">
+        <h4 class="title">
+          Popular Dishes
+        </h4>
+      </ion-col>
+      <ion-col size="6">
+        <h4 class="more ion-text-end">
+          Articulos Disponibles
+        </h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  </div>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides [options]="options">
+
+          <ion-slide  *ngFor="let producto of productos">
+            <ion-card class="card">
+              <ion-card-content class="ion-text-left">
+
+                <div class="img-wrapper">
+                  <ion-img src="{{producto.imgUrl}}"></ion-img>
+                </div>
+                
+                <ion-card-title class="title">{{producto.nombreProducto}}</ion-card-title>
+                <ion-card-subtitle>{{producto.descripcion}}</ion-card-subtitle>
+                <ion-card-subtitle>{{producto.precio}}</ion-card-subtitle>
+                <ion-card-subtitle>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>          
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div class="ion-padding-horizontal wrapper">
+  
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-align-items-baseline">
+        <ion-col size="6">
+          <h4 class="title">
+            Explore Categories
+          </h4>
+        </ion-col>
+        <ion-col size="6">
+          <h4 class="more ion-text-end">
+            Ofertas para Hoy
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    </div>
+  
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="12">
+          <ion-slides [options]="categories">
+  
+            <ion-slide>
+              <ion-card class="category" color="danger">
+                <ion-card-header class="ion-text-center">
+                  <ion-icon src="assets/dish.svg"></ion-icon>
+                  <ion-card-title>Articulo1</ion-card-title>
+                  <ion-card-subtitle>Descripcion de Articulo</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+
+            <ion-slide>
+              <ion-card class="category" color="primary">
+                <ion-card-header class="ion-text-center">
+                  <ion-icon src="assets/cocktail.svg"></ion-icon>
+                  <ion-card-title>Articulo2</ion-card-title>
+                  <ion-card-subtitle>Descripcion de Articulo</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+
+            <ion-slide>
+              <ion-card class="category" color="warning">
+                <ion-card-header class="ion-text-center">
+                  <ion-icon src="assets/burger.svg"></ion-icon>
+                  <ion-card-title>Articulo3</ion-card-title>
+                  <ion-card-subtitle>Descripcion de Articulo</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+
+            <ion-slide>
+              <ion-card class="category" color="success">
+                <ion-card-header class="ion-text-center">
+                  <ion-icon src="assets/pizza.svg"></ion-icon>
+                  <ion-card-title>Articulo4</ion-card-title>
+                  <ion-card-subtitle>Descripcion de Articulo</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+
+            <ion-slide>
+              <ion-card class="category" color="tertiary">
+                <ion-card-header class="ion-text-center">
+                  <ion-icon src="assets/taco.svg"></ion-icon>
+                  <ion-card-title>Articulo5</ion-card-title>
+                  <ion-card-subtitle>Descripcion de Articulo</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+    <div class="ion-padding-horizontal wrapper">
+    
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-align-items-baseline">
+          <ion-col size="6">
+            <h4 class="title">
+              Articulos Recomendados
+            </h4>
+          </ion-col>
+          <ion-col size="6">
+            <h4 class="more ion-text-end">
+              Los Mas Vendidos
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      </div>
+    
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="12">
+            <ion-slides [options]="options">
+    
+              <ion-slide>
+                <ion-card class="card">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper">
+                      <ion-img src="http://d3ugyf2ht6aenh.cloudfront.net/stores/582/395/products/607167-mla28622513299_112018-o-99bea13cf84e39ae1815468005937601-640-0.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+                    </div>
+                    
+                    <ion-card-title class="title">Articulo Recomendado 1</ion-card-title>
+                    <ion-card-subtitle>Escribir Descripcion</ion-card-subtitle>
+                    <ion-card-subtitle>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                <ion-card class="card">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper">
+                      <ion-img src="https://www.venta.com.mx/sh-img/cadena-cartier-acero-enchape-en-oro-18k-24-dije-cruz-D_NQ_NP_643213-MCO26505579814_122017-F_cadena%2Boro%2Btejido%2Bcartier.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+                    </div>
+                    
+                    <ion-card-title class="title">Articulo Recomendado 2</ion-card-title>
+                    <ion-card-subtitle>Escribir Descripcion</ion-card-subtitle>
+                    <ion-card-subtitle>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                <ion-card class="card">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper">
+                      <ion-img src="https://w7.pngwing.com/pngs/643/576/png-transparent-engagement-ring-quinceanera-jewellery-diamond-ring-love-gemstone-ring-thumbnail.png"></ion-img>
+                    </div>
+                    
+                    <ion-card-title class="title">Articulo Recomendado 3</ion-card-title>
+                    <ion-card-subtitle>Escribir Descripcion</ion-card-subtitle>
+                    <ion-card-subtitle>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half"></ion-icon>
+                    </ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+      <div class="ion-padding">
+        <ion-row>
+          <ion-col size="6">
+            <ion-badge color="light" class="ion-margin-end">
+              .
+            </ion-badge>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+            <ion-badge color="light">
+              .
+            </ion-badge>
+          </ion-col>
+        </ion-row>
+      </div>
+
+</ion-content>

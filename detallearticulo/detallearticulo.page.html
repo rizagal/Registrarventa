@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/articulos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ articulo?.producto }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-card>
+    <img [src]="articulo?.url_imagen_producto" />
+ 
+    <ion-card-header>
+      <ion-card-title> {{ articulo?.marca }} </ion-card-title>
+      <ion-card-subtitle> {{ articulo?.cantidad_producto }} </ion-card-subtitle>     
+    </ion-card-header>
+    <ion-card-content>  
+      <ion-label color="medium">{{ articulo?.descripcion_producto }}</ion-label>
+
+   
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+ 
+
+

@@ -1,0 +1,100 @@
+<ion-header class="ion-no-border">
+  <img src="assets/pokeball.png">
+  <ion-toolbar>   
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons> 
+      <ion-title></ion-title>
+      <ion-buttons slot="end">
+        {{ user.email }}
+        <ion-button fill="clear"  (click)="logout()">
+          <ion-icon slot="icon-only" name="log-out" color="dark"></ion-icon>
+        </ion-button>
+      </ion-buttons>  
+  </ion-toolbar>
+
+  <div class="titles">
+    <h4>
+      JOYERIA
+    </h4>
+    <ion-card-subtitle>
+      Por Favor Seleccione Categoria
+    </ion-card-subtitle>
+  </div>
+
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="ion-padding">
+
+    <ion-card color="warning">
+      <div class="mask">
+        <img src="assets/cadena.png">
+      </div>
+      <ion-card-content routerLink="/venta" >
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">#001</ion-card-subtitle>
+            <ion-card-title>Cadenas</ion-card-title>
+            <ion-card-subtitle>
+              <ion-badge>
+                <ion-icon name="flash"></ion-icon>
+                Normal
+              </ion-badge>
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4">
+            <ion-img src="assets/cadena.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="primary">
+      <div class="mask">
+        <img src="assets/doctor.svg"> 
+      </div>
+      <ion-card-content routerLink="/venta">
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">#002</ion-card-subtitle>
+            <ion-card-title>Pulseras o Brazaletes</ion-card-title>
+            <ion-card-subtitle>
+              <ion-badge>
+                <ion-icon name="water"></ion-icon>
+                Rojo
+              </ion-badge>
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4">
+            <ion-img src="assets/brazalete.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="success">
+      <div class="mask">
+        <img src="assets/anillo.png">
+      </div>
+      <ion-card-content routerLink="/venta">
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="no">#003</ion-card-subtitle>
+            <ion-card-title>Anillos</ion-card-title>
+            <ion-card-subtitle>
+              <ion-badge>
+                <ion-icon name="bug"></ion-icon>
+                Blanco
+              </ion-badge>
+            </ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4">
+            <ion-img src="assets/anillo.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
